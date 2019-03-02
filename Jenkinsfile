@@ -3,10 +3,10 @@ node {
     
     stage('gitclone') {
         
-       cd /var/tmp
-       git clone https://github.com/premkumar-1979/ansible-code.git/
-       cd ansible-code
-       ls -al
+       sh '''cd /var/tmp
+        git clone https://github.com/premkumar-1979/ansible-code.git/
+        cd ansible-code
+        ls -al '''
     }
     
     stage (ansible command) {
