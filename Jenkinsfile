@@ -1,7 +1,7 @@
 node {
    
    parameters {
-      string(name: 'PlaybookName', defaultValue: '', description: 'Provide the playbook name u want to run '
+      string(name: 'PlaybookName', defaultValue: '', description: 'Provide the playbook name u want to run ')
           }
     stage('gitclone') {
        git credentialsId: '125e426e-8bec-43ab-9282-96a7f24dcea4', url: 'https://github.com/premkumar-1979/ansible-playbooks.git'
