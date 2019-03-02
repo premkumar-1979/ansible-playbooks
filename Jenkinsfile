@@ -13,7 +13,7 @@ node {
     
     stage ('ansible command') {
         sh ''' cd /var/tmp/ansible-code
-                ansible-playbook --syntax-check $PlaybookName''
+                ansible-playbook --syntax-check $PlaybookName'''
     }
     
     stage ('removingdirectory') {
