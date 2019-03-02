@@ -1,6 +1,10 @@
 node {
    
    
+   stage ('Checkout') {
+    checkout scm
+  }
+   
     stage('gitclone') {
        git credentialsId: '125e426e-8bec-43ab-9282-96a7f24dcea4', url: 'https://github.com/premkumar-1979/ansible-playbooks.git'
        sh label: '', script: '''cd /var/tmp
@@ -23,7 +27,7 @@ node {
     mail from: "jenkinstesting@gmail.com",
          to: "premkumar.unix@gmail.com",
          subject: "ansible deployement status ",
-         body: "Jenkins job ${env.JOB_NAME} - build ${env.BUILD_NUMBER}  ${currentBuild.currentResult} complete"
+         body: "Jenkins job ${env.JOB_NAME} - build ${env.BUILD_NUMBER}  ${currentBuild.currentResult}  ${env.JOB_URL} complete"
   }
     
 }
