@@ -18,5 +18,12 @@ node {
         
         sh 'rm -rf /var/tmp/ansible-code'
     }
+   
+    stage ('Notification') {
+    mail from: "jenkinstesting@gmail.com",
+         to: "premkumar.unix@gmail.com",
+         subject: "ansible deployement status ",
+         body: "Jenkins job ${env.JOB_NAME} - build ${env.BUILD_NUMBER} complete"
+  }
     
 }
