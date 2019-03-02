@@ -9,12 +9,12 @@ node {
         ls -al '''
     }
     
-    stage (ansible command) {
-         cd /var/tmp/ansible-code
-         sh ' ansible-playbook --syntax-check firstplaybook.yml'
+    stage ('ansible command') {
+        sh ''' cd /var/tmp/ansible-code
+                ansible-playbook --syntax-check firstplaybook.yml'''
     }
     
-    stage (removingdirectory) {
+    stage ('removingdirectory') {
         
         sh 'rm -rf /var/tmp/ansible-code'
     }
