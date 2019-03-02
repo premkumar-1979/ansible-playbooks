@@ -23,7 +23,7 @@ node {
     mail from: "jenkinstesting@gmail.com",
          to: "premkumar.unix@gmail.com",
          subject: "ansible deployement status ",
-         body: "Jenkins job ${env.JOB_NAME} - build ${env.BUILD_NUMBER} complete"
+         body: "Jenkins job ${env.JOB_NAME} - build ${env.BUILD_NUMBER}  ${currentBuild.currentResult} complete"
   }
     
 }
